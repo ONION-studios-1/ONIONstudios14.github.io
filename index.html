@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Interdisciplinarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="https://wa.me/593939546643?text=Enviar%20proyecto%20en%20formato%20PDF%20o%20Documento" target="_blank">
+            <img src="ONION.png" alt="Logotipo UEZA" class="logo">
+        </a>
+        <span>PROYECTOS UEZA</span>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="sidebar-item" onclick="loadPDF('pdf_proyectos/ELABORACIÓN_DE_JABON1.pdf', 'https://youtu.be/tIPXpWmqo38', this)">ELABORACIÓN DE JABÓN 1</div>
+                <div class="sidebar-item" onclick="loadPDF('pdf_proyectos/ELABORACIÓN_DE_JABON_2.pdf', 'https://youtu.be/link2', this)">ELABORACIÓN DE JABÓN 2</div>
+                <div class="sidebar-item" onclick="loadPDF('pdf_proyectos/ELABORACIÓN_DE_JABON3.pdf', 'https://youtu.be/link3', this)">ELABORACIÓN DE JABÓN 3</div>
+            </div>
+            <div class="content">
+                <div id="pdfViewerContainer" class="pdf-viewer">
+                    <canvas id="pdfCanvas"></canvas>
+                </div>
+                <div id="youtubeLink" class="youtube-link">
+                    <!-- Aquí se actualizará dinámicamente el enlace de YouTube -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="pdf.js"></script>
+    <script src="script.js"></script>
+
+    <div id="pdfViewerContainer" class="pdf-viewer">
+        <canvas id="pdfCanvas"></canvas>
+    </div>
+    
+
+    <div id="pdfViewerContainer" class="pdf-viewer"></div>
+<div id="youtubeLink" class="youtube-link">
+    <!-- Aquí se actualizará dinámicamente el enlace de YouTube -->
+</div>
+
+</body>
+</html>

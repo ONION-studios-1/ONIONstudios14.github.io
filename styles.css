@@ -1,0 +1,241 @@
+
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #f7a81b;
+    color: #00214d;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header .logo {
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 25%;
+    background-color: #00214d;
+    color: white;
+    overflow-y: auto;
+}
+
+.sidebar-item {
+    padding: 15px;
+    border-bottom: 1px solid #f7a81b;
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    background-color: #f7a81b;
+    color: #00214d;
+}
+
+.sidebar-item.active {
+    background-color: #3a8d34;
+    color: #00214d;
+    font-weight: bold;
+}
+
+/* Contenido principal */
+.content {
+    width: 75%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: calc(100vh - 150px); /* Reduce height para dejar espacio al enlace de YouTube */
+    border: none;
+}
+
+/* Estilo para el enlace de YouTube */
+.youtube-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.youtube-link a {
+    color: #00214d;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.youtube-link a:hover {
+    text-decoration: underline;
+}
+
+/* Asegúrate de que la barra lateral tenga un tamaño adecuado y permita el desplazamiento */
+.sidebar {
+    width: 25%;
+    background-color: #00214d;
+    color: white;
+    overflow-y: auto;
+    max-height: calc(100vh - 60px); /* Ajusta según la altura del header */
+    position: relative;
+}
+
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Solución al espacio en blanco */
+    }
+
+    * {
+        box-sizing: border-box; /* Asegura que el padding no desborde */
+    }
+
+    /* Encabezado */
+    header {
+        flex-direction: row; /* Cambiar la dirección del flex */
+        justify-content: flex-start; /* Alinear elementos hacia la izquierda */
+        align-items: center;
+        font-size: 1.05em; /* Reducir el tamaño del texto */
+        padding: 5px;
+        gap: 0px; /* Espaciado entre logo y título */
+    }
+
+    header .logo {
+        width: 70px; /* 30% más pequeño */
+        height: auto;
+    }
+
+    /* Menú más ancho y desplazamiento vertical */
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Máximo 2 columnas */
+        grid-auto-rows: 35px; /* Altura fija ligeramente mayor */
+        gap: 5px; /* Más espacio entre elementos */
+        overflow-y: auto; /* Activar desplazamiento vertical */
+        max-height: 150px; /* Límite de altura para mostrar 3 filas */
+        padding: 0px; /* Padding interno para separación del contenedor */
+        background-color: #00214d;
+        scroll-snap-type: y mandatory; /* Desplazamiento fluido */
+        width: 100%; /* Menú ancho */
+        margin: 0 auto; /* Centrar horizontalmente */
+    }
+
+    .sidebar-item {
+        text-align: center;
+        padding: 5px; /* Reducir padding para evitar desbordes */
+        color: white;
+        background-color: #00214d;
+        border: 1px solid #f7a81b;
+        border-radius: 5px;
+        font-size: 0.7em; /* Texto un poco más legible */
+        cursor: pointer;
+        scroll-snap-align: start; /* Alinear al inicio en el scroll */
+    }
+
+    .sidebar-item:hover {
+        background-color: #f7a81b;
+        color: #00214d;
+    }
+
+    /* Contenido principal (PDF abajo) */
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        width: 100%;
+        padding: 10px;
+        background-color: #f0f0f0;
+        overflow: hidden; /* Ocultar contenido que desborde */
+    }
+
+    iframe {
+        width: 100%; /* Asegura que no desborde horizontalmente */
+        max-width: 100%;
+        height: calc(100vh - 350px); /* Ajustar según encabezado y menú */
+        border: none;
+        display: block; /* Evita espacios extra */
+    }
+
+    .youtube-link {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 0.8em; /* Reducir el tamaño del texto general */
+    }
+
+    .youtube-link a {
+        font-size: 0.8em; /* Reducir el tamaño del texto del enlace */
+        font-weight: bold;
+        color: #00214d;
+        text-decoration: none;
+    }
+
+    .youtube-link a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+
+
+
+
+.pdf-viewer {
+    position: relative;
+    width: 100%;
+    height: 0vh; /* Ocupa toda la pantalla */
+    overflow-y: scroll; /* Permitir desplazamiento vertical */
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.page-container {
+    margin: 20px auto; /* Separación entre páginas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+
+
