@@ -211,7 +211,7 @@ iframe {
 .pdf-viewer {
     position: relative;
     width: 100%;
-    height: 0vh; /* Ocupa toda la pantalla */
+    height: 100vh; /* Ocupa toda la pantalla */
     overflow-y: scroll; /* Permitir desplazamiento vertical */
     background-color: #f0f0f0;
     padding: 10px;
